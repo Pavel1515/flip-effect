@@ -1,13 +1,19 @@
 .container {
   max-width: 1400px;
   margin: 0 auto;
+  padding-left: 30px;
+  padding-right: 30px;
   margin-top: 40px;
+}
+.grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
 }
 
 .box {
   display: block;
   background-color: transparent;
-  width: calc(50% - 40px);
   height: 300px;
   perspective: 1000px;
 }
@@ -38,19 +44,25 @@
   justify-content: center;
   align-items: center;
   color: white;
+
 }
-.box-front::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5); /* Черный оверлей с 50% прозрачностью */
-  z-index: 1; /* Убедитесь, что оверлей накладывается поверх содержимого блока */
-}
+
 .box-back {
   background-color: #087a80;
   color: #eeeeee;
   transform: rotateX(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.box-back ul{
+  text-align-last: left;
+}
+.wraper_button {
+  padding-bottom: 20px;
+}
+.button {
+  padding: 10px 45px;
+  border:1px solid white ;
+  border-radius: 5px;
 }
